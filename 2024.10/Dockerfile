@@ -14,6 +14,7 @@ LABEL maintainer="CircleCI Execution Team <eng-execution@circleci.com>"
 RUN sudo apt-get update && sudo apt-get install -y \
 		ant \
 		openjdk-8-jdk \
+  		openjdk-11-jdk \
 		openjdk-17-jdk \
 		openjdk-21-jdk \
 		ruby-full \
@@ -32,7 +33,7 @@ ENV PATH $M2_HOME/bin:$PATH
 # Set JAVA_HOME (and related) environment variable. This will be set to our
 # default Java version of 21 but the user would need to reset it when changing
 # JAVA versions.
-ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 ENV JDK_HOME=${JAVA_HOME}
 ENV JRE_HOME=${JDK_HOME}
 ENV MAVEN_VERSION=3.9.9
